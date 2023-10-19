@@ -12,11 +12,11 @@ script:
 deploy:
   provider: elasticbeanstalk
   on:
-    all_branches: true
+    branch: main
   access_key_id: "$ACCESSKEYID"
   secret_access_key: "$SECRETACCESSKEY"
   region: "us-east-1"
   app: "django-tutorial"
   env: "django-env"
-  bucket_name: elasticbeanstalk-us-east-1-488854147643
+  bucket: elasticbeanstalk-us-east-1-488854147643
   skip_cleanup: true
