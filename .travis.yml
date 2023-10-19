@@ -2,12 +2,15 @@ language: python
 dist: xenial
 python:
   - "3.9"
+branches:
+  only:
+    - main
 install:
   - pip install -r ebdjango/requirements.txt
 script:
   - black . --check
   - flake8 . --max-line-length=88
-  - coverage run --source=ebdjango/ebdjango ebdjango/manage.py test
+  - coverage run --source=ebdjango ebdjango/manage.py test
   - coveralls
 deploy:
   provider: elasticbeanstalk
