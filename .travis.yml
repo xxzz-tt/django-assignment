@@ -5,7 +5,10 @@ python:
 install:
   - pip install -r ebdjango/requirements.txt
 script:
-  - python ebdjango/manage.py test
+  - black . --check
+  - flake8 . --max-line-length=88
+  - coverage run --source=ebdjango/ebdjango, ebdjango/polls manage.py test
+  - coveralls
 deploy:
   provider: elasticbeanstalk
   on:
