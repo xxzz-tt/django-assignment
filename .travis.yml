@@ -8,6 +8,8 @@ script:
   - python ebdjango/manage.py test
 deploy:
   provider: elasticbeanstalk
+  on:
+    all_branches: true
   access_key_id:
     secure: "MYWq0bpqopsdEDZ7jMqjBY7ltlrpzBie/p1Xiar8KRCORsJ7S+aHApwQvKVV54upqCqGg8CX2F09Ys/wX3bu50UAQDWkMLXXmp74DxkBTEwfBzNvl7HHqYJLURxwHGmRush4o8LTH72ocGLg7F11fMZVSriTD0G0O0074tU6ldIrbqrQJjWatwcXN8rfLNlHpGqz9E8ypemHUraf2qcuGh+MWaVDUQnFhEBz/Jhn2QFdVJVraWOVwKV4n9tL+DaK4/C6ddd4IwAy1t4dD1l9hEzH03FS1sdWEwOMP7MROJZ5ABCtNQSFKEA5xQSvXz8ALpmASwbcjzVPxWK7EMN/TbZnG9tSR0Rybu7HZGT1KmndiD7yj4tvvcijsbSoyGZdXTDkZBBJucwXW8PtiGJQIJ9JO5bea7ZFHdRxafXKzQzYU6xzDRVinDWYUo00GRxSzwQ2oJWg45ngAhwOg+y2C47Bccb0MfcwH+Waitk1v+wQeYiS9GW72/HXoXxCJSPyu30WbIQprD/KHk2znehOlSNqfSx0Mr/2Qkfl7TODhlEavR1Nu6Es/y/ViIslW8vpQe7ZszLURUNkt15Beg/iTejFtMXIj8tSv+HejAATVhNMmYJO6No3P1sxvTzqVNNFwJzXxmQdaXdzho2gu/QpQ+BPhj1kOWQnqcUr8Zan+HE="
   secret_access_key:
