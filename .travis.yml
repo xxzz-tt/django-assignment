@@ -7,10 +7,13 @@ branches:
     - main
 install:
   - pip install -r ebdjango/requirements.txt
+before_script:
+  - python manage.py migrate
 script:
   - black . --check
   - flake8 . --max-line-length=88
   - coverage run --source=ebdjango ebdjango/manage.py test
+after_script:
   - coveralls
 deploy:
   provider: elasticbeanstalk
