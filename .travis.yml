@@ -12,8 +12,8 @@ before_script:
 script:
   - black . --check
   - flake8 . --max-line-length=88
-  - coverage run --source=ebdjango/ebdjango ebdjango/manage.py test
-after_script:
+  - coverage run --source=ebdjango/polls ebdjango/manage.py test
+after_success:
   - coveralls
 deploy:
   provider: elasticbeanstalk
