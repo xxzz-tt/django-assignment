@@ -9,7 +9,6 @@ branches:
     - main
 install:
   - pip install -r ebdjango/requirements.txt
-  - cd ebdjango
   - mkdir ./tools
   - curl -L https://coveralls.io/coveralls-linux.tar.gz | tar -xz -C ./tools
 before_script:
