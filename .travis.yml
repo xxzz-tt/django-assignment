@@ -26,4 +26,3 @@ deploy:
   app: "django-tutorial"
   env: "django-env"
   bucket: elasticbeanstalk-us-east-1-488854147643
-  skip_cleanup: true
