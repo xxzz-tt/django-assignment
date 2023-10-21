@@ -1,4 +1,7 @@
 language: python
+os: linux
+dist: bionic
+
 python:
   - "3.9"
 branches:
@@ -6,15 +9,19 @@ branches:
     - main
 install:
   - pip install -r ebdjango/requirements.txt
+  - cd ebdjango
+  - mkdir ./tools
+  - curl -L https://coveralls.io/coveralls-linux.tar.gz | tar -xz -C ./tools
 before_script:
-  - python ebdjango/manage.py migrate
+  - python manage.py migrate
+  - python manage.py collectstatic --noinput
 script:
   - black . --check
   - flake8 . --max-line-length=88
   - cd ebdjango
-  - coverage run manage.py test
-after_success:
-  - coveralls
+  - coverage source=ebdjango,polls run manage.py test
+  - coverage xml
+  - ./tools/coveralls report --repo-token=$COVERALLS_REPO_TOKEN ./coverage.xml
 deploy:
   provider: elasticbeanstalk
   on:

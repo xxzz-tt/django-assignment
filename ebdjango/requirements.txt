@@ -3,7 +3,6 @@ certifi==2023.7.22
 charset-normalizer==3.3.0
 click==8.1.7
 coverage==6.5.0
-coveralls==3.3.1
 Django==2.2
 docopt==0.6.2
 flake8==6.1.0
